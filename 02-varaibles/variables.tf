@@ -5,3 +5,10 @@ variable "sample1" {
 output "sample"{
   value = var.sample1
 }
+
+variable "list" {
+  fruits = ["apple","banana","orange"]
+}
+output fruitslist{
+  value = var.list[2]
+}
