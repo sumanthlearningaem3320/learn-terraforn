@@ -24,3 +24,8 @@ output "fruitsappleqyantity" {
   value = var.mapoffruits["apple"]
 }
 
+
+output "sampleofstring" {
+  value = "this is to know the value ${var.mapoffruits["apple"]} quantiy"
+}
+
