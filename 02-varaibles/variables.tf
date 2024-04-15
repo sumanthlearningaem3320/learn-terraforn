@@ -21,6 +21,6 @@ variable "mapoffruits"{
 }
 
 output "fruitsappleqyantity" {
-  value = var.mapoffruits[apple]
+  value = var.mapoffruits["apple"]
 }
 
