@@ -7,7 +7,7 @@ output "sample"{
 }
 
 variable "list" {
-  fruits = ["apple","banana","orange"]
+  default = ["apple","banana","orange"]
 }
 output fruitslist{
   value = var.list[2]
