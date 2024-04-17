@@ -29,8 +29,8 @@ output "sampleofstring" {
   value = "this is to know the value ${var.mapoffruits["apple"]} quantiy"
 }
 
-variable "sample2" {}
+variable "env" {}
 
-output "sample2" {
-  value = var.sample2
+output "env" {
+  value = var.env
 }
