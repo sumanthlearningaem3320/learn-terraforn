@@ -8,10 +8,11 @@ resource "aws_instance" "instances" {
   }
 }
 
-#resource "aws_route53_record" "frontend" {
-#  zone_id = var.zone_id
-#  name    = "frontend-${var.env}"
-#  type    = "A"
-#  ttl     = 30
-#  records = [aws_instance.frontend.private_ip]
-#}
+resource "aws_route53_record" "dev_route53" {
+  for_each = var.components
+  zone_id = var.zone_id
+  name    = "${each.value["name"]}-${var.env}"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.instances[each.value["name"]].private_ip]
+}
