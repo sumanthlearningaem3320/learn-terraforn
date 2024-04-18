@@ -23,7 +23,7 @@ variable "instance1" {
   }
 }
 
-resource "null_resource" "instance1" {
+resource "null_resource" "sample2" {
   for_each = var.instance1
   //count = length(var.instance)
   //value = var.instance[count.index]
