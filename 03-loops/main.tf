@@ -12,11 +12,11 @@ variable "instance1" {
       name = "frontend"
       instance_type = "t3.micro"
     }
-    frontend = {
+    backend = {
       name = "backend"
       instance_type = "t3.micro"
     }
-    frontend = {
+    mysql = {
       name = "mysql"
       instance_type = "t3.micro"
     }
