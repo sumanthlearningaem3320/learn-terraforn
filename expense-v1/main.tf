@@ -1,14 +1,14 @@
 resource "aws_instance" "frontend" {
-  ami           = "ami-0f3c7d07486cad139"
-  instance_type = "t3.micro"
-  vpc_security_group_ids = ["sg-0a85ba565da04fafd"]
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.sg_id
   tags = {
     Name = "frontend"
   }
 }
 
 resource "aws_route53_record" "frontend" {
-  zone_id = "Z0538547HINC84GGOI9H"
+  zone_id = var.zone_id
   name    = "frontend-dev"
   type    = "A"
   ttl     = 30
@@ -16,16 +16,16 @@ resource "aws_route53_record" "frontend" {
 }
 
 resource "aws_instance" "backend" {
-  ami           = "ami-0f3c7d07486cad139"
-  instance_type = "t3.micro"
-  vpc_security_group_ids =["sg-0a85ba565da04fafd"]
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.sg_id
 
   tags = {
     Name = "backend"
   }
 }
 resource "aws_route53_record" "backend" {
-  zone_id = "Z0538547HINC84GGOI9H"
+  zone_id = var.zone_id
   name    = "backend-dev"
   type    = "A"
   ttl     = 30
@@ -33,9 +33,9 @@ resource "aws_route53_record" "backend" {
 }
 
 resource "aws_instance" "mysql" {
-  ami           = "ami-0f3c7d07486cad139"
-  instance_type = "t3.micro"
-  vpc_security_group_ids =["sg-0a85ba565da04fafd"]
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.sg_id
 
   tags = {
     Name = "mysql"
