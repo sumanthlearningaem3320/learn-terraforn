@@ -3,5 +3,5 @@ variable "instance" {
 }
 resource "null_resource" "sample1" {
   count = length(var.instance)
-  value = var.instance[count.index]
+  //value = var.instance[count.index]
 }
