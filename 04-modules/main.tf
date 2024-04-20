@@ -6,7 +6,7 @@ module "test" {
 variable "ec2" {
   default = {
     frontend = {}
-      backend = {}
+    backend = {}
     mysql ={}
   }
 }
